@@ -58,4 +58,4 @@
 |-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 | ![Screen6](./pictures/darklogin.png) | ![Screen7](./pictures/lightsignup.png) | ![Screen8](./pictures/darkhome.png) | ![Screen9](./pictures/darkall.png) | ![Screen10](./pictures/lightspecial.png) |
 | ![Screen11](./pictures/darkdetails.png) | ![Screen12](./pictures/lightlocation.png) | ![Screen13](./pictures/lightfavourites.png) | ![Screen14](./pictures/darkfavourites.png) | ![Screen15](./pictures/darksearch.png) |
-| ![Screen16](./pictures/darkprofile.png) | ![Screen17](./pictures/lightprofile.png.png) | ![Screen18](./pictures/lightmenu.png) | ![Screen19](./pictures/darklocation.png) | ![Screen20](./pictures/lightsignout.png) |
+| ![Screen16](./pictures/darkprofile.png) | ![Screen17](./pictures/lightprofile.png) | ![Screen18](./pictures/lightmenu.png) | ![Screen19](./pictures/darklocation.png) | ![Screen20](./pictures/lightsignout.png) |
