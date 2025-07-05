@@ -53,7 +53,8 @@
    flutter run
   ```
 
+ ## Aero APP FLOW AND SCREEN DETAILS
 | ![Screen1](./pictures/splash.png) | ![Screen2](./pictures/light1.png) | ![Screen3](./pictures/light2.png) | ![Screen4](./pictures/darko3.png) | ![Screen5](./pictures/darko2.png) |
-|---------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 | ![Screen6](./pictures/darklogin.png) | ![Screen7](./pictures/lightsignup.png) | ![Screen8](./pictures/darkhome.png) | ![Screen9](./pictures/darkall.png) | ![Screen10](./pictures/lightspecial.png) |
 | ![Screen11](./pictures/darkdetails.png) | ![Screen12](./pictures/lightlocation.png) | ![Screen13](./pictures/lightfavourites.png) | ![Screen14](./pictures/darkfavourites.png) | ![Screen15](./pictures/darksearch.png) |
