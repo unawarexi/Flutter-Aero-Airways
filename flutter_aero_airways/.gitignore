@@ -26,6 +26,8 @@ migrate_working_dir/
 /android
 /ios
 *.env
+*.env.*
+
 
 # Flutter/Dart/Pub related
 **/doc/api/
