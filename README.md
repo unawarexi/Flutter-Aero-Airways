@@ -49,9 +49,9 @@
 2. Run `flutter pub get`
 3. Set up your `.env` file with Firebase & API keys
 4. Run on device:
-   ```bash
+```bash
    flutter run
-  ```
+```
 
  ## Aero APP FLOW AND SCREEN DETAILS
 | ![Screen1](./pictures/splash.png) | ![Screen2](./pictures/light1.png) | ![Screen3](./pictures/light2.png) | ![Screen4](./pictures/darko3.png) | ![Screen5](./pictures/darko2.png) |
