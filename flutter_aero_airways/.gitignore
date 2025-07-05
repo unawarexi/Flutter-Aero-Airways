@@ -23,8 +23,7 @@ migrate_working_dir/
 # is commented out by default.
 #.vscode/
 
-/android
-/ios
+
 *.env
 *.env.*
 

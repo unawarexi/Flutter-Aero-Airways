@@ -45,7 +45,7 @@
 
 ## 📦 Installation
 
-1. Clone this repo
+1. Clone this repo `git clone <repo url>`
 2. Run `flutter pub get`
 3. Set up your `.env` file with Firebase & API keys
 4. Run on device:

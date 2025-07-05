@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>43359388157-28u5q6shg76qbjqj6137l0qmi20j2jdr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.43359388157-28u5q6shg76qbjqj6137l0qmi20j2jdr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>43359388157-sj0bf6cdodkuoksnh4flmlltcnt485bo.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDVvOTIeQK9tWpa6cRGLwnUQ3sXGuBzZZA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>43359388157</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterAeroAirways</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-aero-airways</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-aero-airways.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:43359388157:ios:365100f122e3b2de78d994</string>
+</dict>
+</plist>

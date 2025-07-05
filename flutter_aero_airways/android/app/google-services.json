@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "43359388157",
+    "project_id": "flutter-aero-airways",
+    "storage_bucket": "flutter-aero-airways.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43359388157:android:81ea378a1a6359d278d994",
+        "android_client_info": {
+          "package_name": "com.example.flutter_aero_airways"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43359388157-sj0bf6cdodkuoksnh4flmlltcnt485bo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_aero_airways",
+            "certificate_hash": "6583962bd5cf6c39452c9024550b403c70e1a360"
+          }
+        },
+        {
+          "client_id": "43359388157-94mnhgcfotq9ffvhf37cemq0uqj8tav6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnhbHWqIyXe6oveAx1IUxHvEyj8w47rYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43359388157-94mnhgcfotq9ffvhf37cemq0uqj8tav6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "43359388157-28u5q6shg76qbjqj6137l0qmi20j2jdr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterAeroAirways"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
