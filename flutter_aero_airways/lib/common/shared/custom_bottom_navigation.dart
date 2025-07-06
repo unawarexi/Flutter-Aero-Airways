@@ -10,21 +10,18 @@ class BottomNavigationBarWidget extends StatefulWidget {
   const BottomNavigationBarWidget({super.key});
 
   @override
-  _BottomNavigationBarWidgetState createState() =>
+  State<BottomNavigationBarWidget> createState() =>
       _BottomNavigationBarWidgetState();
 }
 
 class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget>
     with TickerProviderStateMixin {
   int _selectedIndex = 0;
-  int _hoveredIndex = -1;
 
   late AnimationController _animationController;
   late AnimationController _rippleController;
-  late Animation<double> _scaleAnimation;
   late Animation<double> _fadeAnimation;
   late List<AnimationController> _itemControllers;
-  late List<Animation<double>> _itemAnimations;
 
   final List<Widget> _screens = [
     const HomeScreen(),
@@ -37,19 +34,19 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget>
       icon: Iconsax.home,
       selectedIcon: Iconsax.home_25,
       label: 'Home',
-      color: Colors.lime, // Use lime for Home
+      color: Colors.lime,
     ),
     NavigationItem(
       icon: Iconsax.airplane,
       selectedIcon: Iconsax.airplane,
       label: 'Flights',
-      color: Colors.green, // Use green for Flights
+      color: Colors.green,
     ),
     NavigationItem(
       icon: Iconsax.user,
       selectedIcon: Iconsax.user,
       label: 'Profile',
-      color: Colors.lime, // Use lime for Profile
+      color: Colors.lime,
     ),
   ];
 
@@ -70,37 +67,27 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget>
       vsync: this,
     );
 
-    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.elasticOut),
-    );
-
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
 
     // Individual item animations
     _itemControllers = List.generate(
-      _navigationItems.length, // <-- fix: use the correct length
+      _navigationItems.length,
       (index) => AnimationController(
         duration: Duration(milliseconds: 200 + (index * 50)),
         vsync: this,
       ),
     );
 
-    _itemAnimations = _itemControllers
-        .map(
-          (controller) => Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(parent: controller, curve: Curves.easeOutBack),
-          ),
-        )
-        .toList();
-
     _animationController.forward();
 
     // Stagger item animations
     for (int i = 0; i < _itemControllers.length; i++) {
       Future.delayed(Duration(milliseconds: i * 100), () {
-        _itemControllers[i].forward();
+        if (mounted) {
+          _itemControllers[i].forward();
+        }
       });
     }
   }
@@ -138,57 +125,55 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget>
   Widget build(BuildContext context) {
     final isDarkMode = THelperFunctions.isDarkMode(context);
 
-    return 
-      Scaffold(
-        backgroundColor: isDarkMode
-            ? const Color(0xFF000000)
-            : const Color(0xFFE8F5E8),
-        body: _screens[_selectedIndex],
-        bottomNavigationBar: AnimatedBuilder(
-          animation: _fadeAnimation,
-          builder: (context, child) {
-            return Transform.translate(
-              offset: Offset(0, (1 - _fadeAnimation.value) * 100),
-              child: Opacity(
-                opacity: _fadeAnimation.value,
-                child: Container(
-                  margin: const EdgeInsets.fromLTRB(16, 4, 16, 40),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24),
-                    child: Flexible(
-                      child: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 4,
+    return Scaffold(
+      backgroundColor: isDarkMode
+          ? const Color(0xFF000000)
+          : const Color(0xFFE8F5E8),
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: AnimatedBuilder(
+        animation: _fadeAnimation,
+        builder: (context, child) {
+          return Transform.translate(
+            offset: Offset(0, (1 - _fadeAnimation.value) * 100),
+            child: Opacity(
+              opacity: _fadeAnimation.value,
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(16, 4, 16, 40),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(24),
+                  child: Container(
+                    height: 60,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: isDarkMode
+                          ? Colors.grey.shade900
+                          : Colors.green.shade100,
+                      boxShadow: [
+                        BoxShadow(
+                          color: isDarkMode
+                              ? Colors.black.withOpacity(0.2)
+                              : Colors.green.withOpacity(0.08),
+                          blurRadius: 16,
+                          offset: const Offset(0, 4),
                         ),
-                        decoration: BoxDecoration(
-                          color: isDarkMode ? Colors.grey.shade900 : Colors.green.shade100,
-                          boxShadow: [
-                            BoxShadow(
-                              color: isDarkMode
-                                  ? Colors.black.withOpacity(0.2)
-                                  : Colors.green.withOpacity(0.08),
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: List.generate(_navigationItems.length, (index) {
-                            return _buildNavigationItem(index, isDarkMode);
-                          }),
-                        ),
-                      ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(_navigationItems.length, (index) {
+                        return _buildNavigationItem(index, isDarkMode);
+                      }),
                     ),
                   ),
                 ),
               ),
-            );
-          },
-        ),
-    
+            ),
+          );
+        },
+      ),
     );
   }
 

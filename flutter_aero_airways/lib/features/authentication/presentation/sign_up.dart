@@ -178,7 +178,7 @@ class _SignUpState extends ConsumerState<SignUp> with TickerProviderStateMixin {
         child: SafeArea(
           child: Stack(
             children: [
-              // Logo positioned at top-left
+              
               Positioned(
                 top: 10,
                 left: 32,
